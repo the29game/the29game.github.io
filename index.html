@@ -824,8 +824,8 @@ function checkWidthAndRedirect() {
     var currentLocation = window.location.href;
     
     // Yalnızca ekran genişliği 720'den küçükse ve zaten index.html'de değilsek yönlendir
-    if (screenWidth < 720 && !currentLocation.includes('game.php')) {
-        window.location.href = "game.php";
+    if (screenWidth < 720 && !currentLocation.includes('game.html')) {
+        window.location.href = "game.html";
     }
 }
 
