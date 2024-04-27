@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayı Tahmin Oyunu</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+  }
+  #developer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+    font-size: 12px;
+  }
+  #message {
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    text-align: center;
+  }
+  #counter {
+    font-size: 32px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #007BFF;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+</style>
+</head>
+<body>
+<div id="message">Bir sayı tut lütfen</div>
+<div id="counter"></div>
+<div class="button-container">
+  <button id="yesBtn" style="display:none;">Evet</button>
+  <button id="noBtn" style="display:none;">Hayır</button>
+</div>
+<div id="developer">Geliştirici: Besat Arif Çıngar</div>
+
+<script>
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function startCountdown(seconds) {
+  const counter = document.getElementById('counter');
+  for (let i = seconds; i >= 0; i--) {
+    counter.textContent = i;
+    await sleep(1000);
+  }
+  counter.textContent = '';
+}
+
+async function guessNumber() {
+  let min = 1;
+  let max = 100;
+  const message = document.getElementById('message');
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+
+  await startCountdown(5);
+  message.textContent = 'Oyun başlıyor...';
+
+  async function askQuestion() {
+    if (min > max) {
+      message.textContent = `Tuttuğunuz sayı ${min - 1}!`;
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      return;
+    }
+    let guess = Math.floor((min + max) / 2);
+    message.textContent = `Tuttuğun sayı ${guess} küçük mü?`;
+    yesBtn.style.display = 'inline';
+    noBtn.style.display = 'inline';
+
+    yesBtn.onclick = () => {
+      max = guess - 1;
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      askQuestion();
+    };
+
+    noBtn.onclick = () => {
+      min = guess + 1;
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      askQuestion();
+    };
+  }
+
+  askQuestion();
+}
+
+guessNumber();
+</script>
+</body>
+</html>
