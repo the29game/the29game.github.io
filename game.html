@@ -613,12 +613,12 @@ function bilgisayarSecim2() { // Hata: Fonksiyon adı yanlış
         
         kalanSeker2 -= secilen2; // Hata: Değişken ismi yanlış
         hideSugars2(secilen2); // Hata: Fonksiyon adı yanlış
-        document.getElementById("info2").innerText = "Bilgisayar " + secilen2 + " seçti. Kalan şeker: " + kalanSeker2;
+        document.getElementById("info2").innerText = "Computer " + secilen2 + " chose. Remaining sugar: " + kalanSeker2;
 
         if (kalanSeker2 <= 0) { // Hata: Değişken ismi yanlış
-            document.getElementById("info2").innerText = "Oyun bitti! Bilgisayar kazandı! Acı Biberi Yemelisin!";
+            document.getElementById("info2").innerText = "Game over! The computer won! You Should Eat Hot Pepper!";
             document.getElementById("butonlar2").style.display = "none";
-            document.getElementById("start-buttons2").innerHTML = '<button onclick="window.location.reload();">Yeniden Başla</button>';
+            document.getElementById("start-buttons2").innerHTML = '<button onclick="window.location.reload();">START AGAIN</button>';
             return;
         }
 
