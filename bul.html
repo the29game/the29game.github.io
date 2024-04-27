@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 93vh;
+    height: 92vh;
     flex-direction: column;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
@@ -70,7 +70,7 @@
 </style>
 </head>
 <body>
-<div id="message">Bir sayı tut lütfen</div>
+<div id="message">0-100 arası bir sayı tut lütfen</div>
 <div id="counter"></div>
 <div class="button-container">
   <button id="yesBtn" style="display:none;">Evet</button>
@@ -110,7 +110,7 @@ async function guessNumber() {
       return;
     }
     let guess = Math.floor((min + max) / 2);
-    message.textContent = `Tuttuğun sayı ${guess} küçük mü?`;
+    message.textContent = `Tuttuğun sayı ${guess}'den küçük mü?`;
     yesBtn.style.display = 'inline';
     noBtn.style.display = 'inline';
 
