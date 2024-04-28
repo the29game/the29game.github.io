@@ -102,7 +102,7 @@
     </style>
                         <h5 class="card-header-text">"Who Will Eat The Chili 🌶️😟😳🙁😋"
 <br>
-[Rules❗] You have the right to take 1, 2, or 3 candies. If the last thing in the jar is chili, the player whose turn it is loses.n</h5>
+[❗Rules] You have the right to take 1, 2, or 3 candies. If the last thing in the jar is chili, the player whose turn it is loses.</h5>
  not kısmı 
 
                      </div> 
@@ -347,7 +347,7 @@ function selectSugar(amount) {
     updateInfo("Remaining sugars: " + remainingSugars);
     checkEndGame();
     currentPlayer = currentPlayer === 'player1' ? 'player2' : 'player1';
-    updateInfo("Turn: Player " + (currentPlayer === 'player1' ? '1' : '2') + ".");
+    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? '1' : '2') + ".");
     updateSugarButtons();
 }
 
@@ -372,7 +372,7 @@ function updateScore(winner) {
     } else {
         player1Score++;
     }
-    document.getElementById("score").innerText = "Score - Player 1: " + player1Score + " Player 2: " + player2Score;
+    document.getElementById("score").innerText = "🏆 Score - Player 1 = " + player1Score + " ⚔️ Player 2 = " + player2Score;
 }
 
 function hideSugars(count) {
@@ -465,7 +465,7 @@ function updateSugarButtons() {
     </style>
                         <h5 class="card-header-text">"Who Will Eat The Chili 🌶️😟😳🙁😋"
 <br>
-[Rules❗] You have the right to take 1, 2, or 3 candies. If the last thing in the jar is chili, the player whose turn it is loses.n</h5>
+[❗Rules] You have the right to take 1, 2, or 3 candies. If the last thing in the jar is chili, the player whose turn it is loses.</h5>
 <!-- not kısmı -->
 
                      </div>
