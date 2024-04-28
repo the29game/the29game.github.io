@@ -334,7 +334,7 @@ function startGame() {
     document.getElementById("buttons").style.display = "block";
     var startingPlayer = Math.random() < 0.5 ? 'player1' : 'player2';
     currentPlayer = startingPlayer;
-    updateInfo("Player " + (startingPlayer === 'player1' ? '1' : '2') + " starts.");
+    updateInfo("Player " + (startingPlayer === 'player1' ? 'A' : 'B') + " starts.");
     updateSugarPositions(); // Update the positions of sugars in the jar
 }
 
@@ -347,13 +347,13 @@ function selectSugar(amount) {
     updateInfo("Remaining sugars: " + remainingSugars);
     checkEndGame();
     currentPlayer = currentPlayer === 'player1' ? 'player2' : 'player1';
-    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? '1' : '2') + ".");
+    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? 'A' : 'B'));
     updateSugarButtons();
 }
 
 function checkEndGame() {
     if (remainingSugars <= 0) {
-        var winner = currentPlayer === 'player1' ? '2' : '1'; // Correction needed here
+        var winner = currentPlayer === 'player1' ? 'B' : 'A'; // Correction needed here
         updateInfo("Game over! Player " + winner + " wins!");
         document.getElementById("buttons").style.display = "none";
         updateScore(winner);
@@ -372,7 +372,7 @@ function updateScore(winner) {
     } else {
         player1Score++;
     }
-    document.getElementById("score").innerText = "🏆 Score - Player 1 = " + player1Score + " ⚔️ Player 2 = " + player2Score;
+    document.getElementById("score").innerText = "🏆 Score - Player A = " + player1Score + " ⚔️ Player B = " + player2Score;
 }
 
 function hideSugars(count) {
