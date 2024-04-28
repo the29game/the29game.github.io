@@ -347,7 +347,7 @@ function selectSugar(amount) {
     updateInfo("Remaining sugars: " + remainingSugars);
     checkEndGame();
     currentPlayer = currentPlayer === 'player1' ? 'player2' : 'player1';
-    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? 'A' : 'B'));
+    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? 'A' : 'B') +  remainingSugars);
     updateSugarButtons();
 }
 
