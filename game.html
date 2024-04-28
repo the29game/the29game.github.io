@@ -576,7 +576,7 @@ function secildi(miktar2) {
     hideSugars2(miktar2); // Hata: Fonksiyon adı yanlış
     document.getElementById("info2").innerText = "Remaining candy: " + kalanSeker2;
 
-    if (kalanSeker2 <= 0) { // Hata: Değişken ismi yanlış
+    if (remainingSugar <= 0) { // Hata: Değişken ismi yanlış
         document.getElementById("info2").innerText = "The game is over! You won! 🏆";
         document.getElementById("butonlar2").style.display = "none";
         document.getElementById("start-buttons2").innerHTML = '<button onclick="window.location.reload();">Restart</button>';
