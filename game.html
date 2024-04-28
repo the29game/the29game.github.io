@@ -347,7 +347,7 @@ function selectSugar(amount) {
     updateInfo("Remaining sugars: " + remainingSugars);
     checkEndGame();
     currentPlayer = currentPlayer === 'player1' ? 'player2' : 'player1';
-    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? 'A' : 'B') + "🍬"  +  remainingSugars);
+    updateInfo("👉Turn: Player " + (currentPlayer === 'player1' ? 'A' : 'B') + " 🍬"  +  remainingSugars);
     updateSugarButtons();
 }
 
@@ -613,7 +613,7 @@ function bilgisayarSecim2() { // Hata: Fonksiyon adı yanlış
         
         kalanSeker2 -= secilen2; // Hata: Değişken ismi yanlış
         hideSugars2(secilen2); // Hata: Fonksiyon adı yanlış
-        document.getElementById("info2").innerText = "Computer " + secilen2 + " chose. Remaining sugar: " + kalanSeker2;
+        document.getElementById("info2").innerText = "Computer " + secilen2 + " chose. Candies 🍬: " + kalanSeker2;
 
         if (kalanSeker2 <= 0) { // Hata: Değişken ismi yanlış
             document.getElementById("info2").innerText = "Game over! The computer won! You Should Eat Hot Pepper!";
@@ -685,7 +685,7 @@ updateSugar2(); // Hata: Fonksiyon adı yanlış
   <hr> <h1>Please review our current project to support.</h1>
     <image src="https://play-lh.googleusercontent.com/YkAv4Xp1IBS-h8cdfAVmLZYZpOGKxL6tmu-UWgXZwouqysiEdp1TbTj6_05qcfi_H8I=w2560-h1440-rw" width="100%"></image>
 
-   <button><a href=""> skjdfnskjfg </a> </button>
+   <center> <button style="color: black;"><a href="https://play.google.com/store/apps/details?id=org.mathconsole_lite.mathconsole_lite&gl=TR"> Math Solver </a> </button></center>
 </div>
 
 <
