@@ -353,7 +353,7 @@ function selectSugar(amount) {
 
 function checkEndGame() {
     if (remainingSugars <= 0) {
-        var winner = currentPlayer === 'player1' ? 'B' : 'A'; // Correction needed here
+        var winner = currentPlayer === 'player1' ? 'A' : 'B'; // Correction needed here
         updateInfo("Game over! Player " + winner + " wins!");
         document.getElementById("buttons").style.display = "none";
         updateScore(winner);
