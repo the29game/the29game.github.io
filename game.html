@@ -576,12 +576,14 @@ function secildi(miktar2) {
     hideSugars2(miktar2); // Hata: Fonksiyon adı yanlış
     document.getElementById("info2").innerText = "Remaining candy: " + kalanSeker2;
 
-    if (remainingSugar <= 0) { // Hata: Değişken ismi yanlış
+    if (kalanSeker2 <= 0) { // Hata: Değişken ismi yanlış
         document.getElementById("info2").innerText = "The game is over! You won! 🏆";
         document.getElementById("butonlar2").style.display = "none";
         document.getElementById("start-buttons2").innerHTML = '<button onclick="window.location.reload();">Restart</button>';
+       document.getElementById("start-buttons2").style.display = "block";
         return;
     }
+  
 
     beninSiram2 = false; // Hata: Değişken ismi yanlış
     beninSecimi2 = miktar2; // Hata: Değişken ismi yanlış
